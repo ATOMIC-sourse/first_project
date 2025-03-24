@@ -13,9 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from cgitb import handler
 
 from django.urls import path
 
+from calculator.views import calculator, DATA
+
 urlpatterns = [
-    # здесь зарегистрируйте вашу view-функцию
+    path('omlet/', calculator, name = 'omlet'),
+    path('pasta/', calculator, name = 'pasta'),
+    path('buter/', calculator, name = 'buter'),
+    path('bread/', calculator, name = 'bread'),
+    path('cereal/', calculator, name = 'cereal'),
 ]

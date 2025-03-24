@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.template.context_processors import request
 
 DATA = {
     'omlet': {
@@ -29,12 +28,12 @@ DATA = {
     }
 }
 
-def calculator(request):
-    recipe = DATA.get(request)
-    servings = request.GET.get('servings', 1)
-    servings = int(servings)
-    scaled_recipe = {ingredient: amount * servings for ingredient, amount in recipe.items()}
-    context = {
-      'recipe': scaled_recipe
-    }
-    return request, 'calculator/index.html', context
+# recipe = 'omlet'
+# value = DATA.values()
+# for dish in DATA.keys():
+#     if recipe == dish:
+#         print(DATA.values())
+servings = input()
+recipe = DATA.get('bread')
+# scaled_recipe = {ingredient: amount * servings for ingredient, amount in recipe.items()}
+print(recipe)
